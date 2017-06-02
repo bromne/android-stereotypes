@@ -2,7 +2,11 @@ package com.bromne.stereotypes.io
 
 import android.content.SharedPreferences
 import android.util.Base64
-import java.io.*
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
+import java.io.ObjectInputStream
+import java.io.ObjectOutputStream
+import java.io.Serializable
 
 fun SharedPreferences.Editor.putSerializable(key: String, data: Serializable): SharedPreferences.Editor {
     val baos = ByteArrayOutputStream()
