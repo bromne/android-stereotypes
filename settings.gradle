@@ -1,1 +1,1 @@
-include ':app', ':stereotypes'
+include ':app'

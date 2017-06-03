@@ -8,6 +8,7 @@ import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
 import java.io.Serializable
 
+@Suppress("unused")
 fun SharedPreferences.Editor.putSerializable(key: String, data: Serializable): SharedPreferences.Editor {
     val baos = ByteArrayOutputStream()
     val oos = ObjectOutputStream(baos)
@@ -20,7 +21,7 @@ fun SharedPreferences.Editor.putSerializable(key: String, data: Serializable): S
     return this
 }
 
-@Suppress("UNCHECKED_CAST")
+@Suppress("unused", "UNCHECKED_CAST")
 fun <T> SharedPreferences.getSerializable(key: String): T? where T : Serializable {
     val base64 = this.getString(key, null)
     if (base64 != null) {
@@ -36,6 +37,7 @@ fun <T> SharedPreferences.getSerializable(key: String): T? where T : Serializabl
     }
 }
 
+@Suppress("unused")
 fun SharedPreferences.update(editting: (SharedPreferences.Editor) -> SharedPreferences.Editor): Unit {
     editting(this.edit())
             .commit()
