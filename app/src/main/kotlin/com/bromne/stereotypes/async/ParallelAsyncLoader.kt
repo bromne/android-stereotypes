@@ -1,5 +1,6 @@
 package com.bromne.stereotypes.async
 
+@Suppress("unused")
 class ParallelAsyncLoader<K, T> {
     internal val tasks: MutableMap<K, RegularAsyncTask<T>> = mutableMapOf()
     internal val listenersDictionary: MutableMap<K, MutableList<RegularAsyncTask.Callbacks<T>>> = mutableMapOf()
