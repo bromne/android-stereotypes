@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        // applicationId "com.bromne.stereotypes"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
@@ -19,11 +19,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+buildscript {
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+    repositories {
+        jcenter()
     }
 }
 
