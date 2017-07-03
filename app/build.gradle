@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-//apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 24
@@ -26,15 +25,6 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 }
-
-//buildscript {
-//    dependencies {
-//        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
-//    }
-//    repositories {
-//        jcenter()
-//    }
-//}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
