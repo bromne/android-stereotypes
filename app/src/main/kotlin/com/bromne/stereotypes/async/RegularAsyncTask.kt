@@ -31,8 +31,6 @@ class RegularAsyncTask<T>(val callbacks: Callbacks<T>) : AsyncTask<Void, Int, Ei
             is Either.Right -> this.callbacks.onLoadFinished(result.value)
             is Either.Left -> this.callbacks.onException(result.value)
         }
-
-        result.map({ this.callbacks.onException(it) }, { this.callbacks.onLoadFinished(it) })
     }
 
     companion object {
